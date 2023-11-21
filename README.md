@@ -46,7 +46,7 @@ Proposing Solutions from a Socio-Economic Standpoint Based on the Identified Cau
 - Convert collected data to the same format
 - Merge data based on Country ID
 
--> merged_data.xlsx
+<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/merged_data.xlsx" >merged_data.xlsx </a>
 
 #### Data Preprocessing
 - Initial Analysis(calculate the percentage of missing values for each feature)
@@ -60,20 +60,19 @@ Proposing Solutions from a Socio-Economic Standpoint Based on the Identified Cau
 #### After
 ![after](https://user-images.githubusercontent.com/75584814/284490589-fd1ed4f0-8b1e-490c-8417-e0ec241044bb.png)
 
--> real_merged_data.xlsx
+<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/real_merged_data.xlsx" >real_merged_data.xlsx </a>
 
 #### Feature Extraction
 - Create new features from existing features
     * Work Leisure Balance Index = 'AvgHoursWorked' / 'TotalLaborParticipationRate'
     * Labor Market Stability = ‘EmploymentRate’ / ‘UnemploymentRate’
-    * Hosing Affordability Index = = ‘HousingPrice’ / ‘PerCapitaGDP’
+    * Hosing Affordability Index = ‘HousingPrice’ / ‘PerCapitaGDP’
 - Deletion of Unnecessary Features
     * PerCapitaGDP = ‘GDP’ / ‘Population’
     * Population
     * DivorceRate
 
--> after_extraction_data.xlsx
-
+<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_extraction_data.xlsx" >after_extraction_data.xlsx </a>
 #### Correlation Analysis
 - Correlation Analysis using heatmap
 - Excludes specific features for creating 4 new datasets
@@ -81,7 +80,10 @@ Proposing Solutions from a Socio-Economic Standpoint Based on the Identified Cau
 - Feature Selection utilizing RFECV using a RandomForestRegressor
 
 -> after_correlation_data(01,02,03,04).xlsx
-
+<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_correlation_data01.xlsx" >after_correlation_data01.xlsx </a>
+<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_correlation_data02.xlsx" >after_correlation_data02.xlsx </a>
+<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_correlation_data03.xlsx" >after_correlation_data03.xlsx </a>
+<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_correlation_data04.xlsx" >after_correlation_data04.xlsx </a>
 #### Preliminary Experiment
 - Modeling with XGBoost regression to predict 'BirthRate'
 - Evaluates the model's performance
@@ -92,7 +94,8 @@ Proposing Solutions from a Socio-Economic Standpoint Based on the Identified Cau
 - Removes less important features identified by both RandomForestRegressor and XGBRegressor 
 
 -> data_rf.xlsx, data_xgb.xlsx
-
+<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/data_rf.xlsx" >data_rf.xlsx </a>
+<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/data_xgb.xlsx" >data_xgb.xlsx </a>
 #### Final Data Analysis
 - 
 
