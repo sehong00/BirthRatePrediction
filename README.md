@@ -41,14 +41,14 @@ Proposing Solutions from a Socio-Economic Standpoint Based on the Identified Cau
 | POL          | Poland       |
 | PRT          | Portugal     |
 
-#### Data Merge - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/data_merge.ipynb" > Code </a>
+### Data Merge - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/data_merge.ipynb" > Code </a>
 - Collecting data 
 - Convert collected data to the same format
 - Merge data based on Country ID
 
 📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/merged_data.xlsx" >merged_data.xlsx </a>
 
-#### Data Preprocessing - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/data_merge.ipynb" > Code </a>
+### Data Preprocessing - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/data_merge.ipynb" > Code </a>
 - Initial Analysis(calculate the percentage of missing values for each feature)
 - Handling Missing Values(more than 20% missing values are dropped)
 - Creating Country-Specific Datasets
@@ -62,7 +62,7 @@ Proposing Solutions from a Socio-Economic Standpoint Based on the Identified Cau
 
 📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/real_merged_data.xlsx" >real_merged_data.xlsx </a>
 
-#### Feature Extraction - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/Feature%20Extraction.ipynb" > Code </a>
+### Feature Extraction - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/Feature%20Extraction.ipynb" > Code </a>
 - Create new features from existing features
     * Work Leisure Balance Index = 'AvgHoursWorked' / 'TotalLaborParticipationRate'
     * Labor Market Stability = ‘EmploymentRate’ / ‘UnemploymentRate’
@@ -74,7 +74,7 @@ Proposing Solutions from a Socio-Economic Standpoint Based on the Identified Cau
 
 📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_extraction_data.xlsx" >after_extraction_data.xlsx </a>
 
-#### Correlation Analysis - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/Correlation_Analysis.ipynb" > Code </a>
+### Correlation Analysis - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/Correlation_Analysis.ipynb" > Code </a>
 - Correlation Analysis using heatmap
 - Excludes specific features for creating 4 new datasets
 - Correlation Analysis on Modified Datasets
@@ -85,11 +85,11 @@ Proposing Solutions from a Socio-Economic Standpoint Based on the Identified Cau
 📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_correlation_data02.xlsx" >after_correlation_data02.xlsx </a>   
 📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_correlation_data03.xlsx" >after_correlation_data03.xlsx </a>   
 📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_correlation_data04.xlsx" >after_correlation_data04.xlsx </a>   
-#### Preliminary Experiment - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/Preliminary%20Experiment.ipynb" > Code </a>
+### Preliminary Experiment - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/Preliminary%20Experiment.ipynb" > Code </a>
 - Modeling with XGBoost regression to predict 'BirthRate'
 - Evaluates the model's performance
 
-#### Correlation Analysis_RFECV - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/Correlation_Analysis_RFECV.ipynb" > Code </a>
+### Correlation Analysis_RFECV - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/Correlation_Analysis_RFECV.ipynb" > Code </a>
 - Feature Selection using RandomForestRegressor and XGBRegressor
 - Ranks features based on their importance
 - Removes less important features identified by both RandomForestRegressor and XGBRegressor 
@@ -97,14 +97,14 @@ Proposing Solutions from a Socio-Economic Standpoint Based on the Identified Cau
 
 📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/data_rf.xlsx" >data_rf.xlsx </a>   
 📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/data_xgb.xlsx" >data_xgb.xlsx </a>
-#### Final Data Analysis
+### Final Data Analysis
 - 
 
-#### Compare performance
+### Compare performance
 
 -
 
-#### Results
+### Results
 -
 
 
