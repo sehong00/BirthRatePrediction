@@ -54,9 +54,10 @@ Proposing Solutions from a Socio-Economic Standpoint Based on the Identified Cau
 - Creating Country-Specific Datasets
 - Automated Handling of Missing Values for Each Country
 - Merging Country-Specific Datasets and Visualization
-Before 
+
+#### Before 
 ![before](https://user-images.githubusercontent.com/75584814/284490475-15f99b8e-f792-4a55-baf5-4eea333c7c06.png)
-After
+#### After
 ![after](https://user-images.githubusercontent.com/75584814/284490589-fd1ed4f0-8b1e-490c-8417-e0ec241044bb.png)
 
 ->real_merged_data.xlsx
