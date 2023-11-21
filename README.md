@@ -60,35 +60,47 @@ Proposing Solutions from a Socio-Economic Standpoint Based on the Identified Cau
 #### After
 ![after](https://user-images.githubusercontent.com/75584814/284490589-fd1ed4f0-8b1e-490c-8417-e0ec241044bb.png)
 
-->real_merged_data.xlsx
+-> real_merged_data.xlsx
 
 #### Feature Extraction
 - Create new features from existing features
-    * Work Leisure Balance Index
-    * Labor Market Stability
-    * Hosing Affordability Index
+    * Work Leisure Balance Index = 'AvgHoursWorked' / 'TotalLaborParticipationRate'
+    * Labor Market Stability = ‘EmploymentRate’ / ‘UnemploymentRate’
+    * Hosing Affordability Index = = ‘HousingPrice’ / ‘PerCapitaGDP’
 - Deletion of Unnecessary Features
-    * PerCapitaGDP
+    * PerCapitaGDP = ‘GDP’ / ‘Population’
     * Population
     * DivorceRate
-    
+
+-> after_extraction_data.xlsx
+
 #### Correlation Analysis
-- 
-- 
-- 
-- 
-- 
-#### RFECV
-- 
-- 
-### Final Data Analysis
+- Correlation Analysis using heatmap
+- Excludes specific features for creating 4 new datasets
+- Correlation Analysis on Modified Datasets
+- Feature Selection utilizing RFECV using a RandomForestRegressor
+
+-> after_correlation_data(01,02,03,04).xlsx
+
+#### Preliminary Experiment
+- Modeling with XGBoost regression to predict 'BirthRate'
+- Evaluates the model's performance
+
+#### Correlation Analysis_RFECV
+- Feature Selection using RandomForestRegressor and XGBRegressor
+- Ranks features based on their importance
+- Removes less important features identified by both RandomForestRegressor and XGBRegressor 
+
+-> data_rf.xlsx, data_xgb.xlsx
+
+#### Final Data Analysis
 - 
 
-### Compare performance
+#### Compare performance
 
 -
 
-### Results
+#### Results
 -
 
 
