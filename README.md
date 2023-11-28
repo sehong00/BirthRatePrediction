@@ -41,6 +41,15 @@ Proposing Solutions from a Socio-Economic Standpoint Based on the Identified Cau
 | POL          | Poland       |
 | PRT          | Portugal     |
 
+## Libraries Used
+- pandas: Utilized for data manipulation and analysis.
+- numpy: Used for numerical operations and calculations.
+- matplotlib: Employed for creating visualizations, including scatter plots.
+- scikit-learn (sklearn): Applied for machine learning tasks, such as model training, evaluation, and hyperparameter tuning.
+- xgboost: Integrated for implementing XGBoost regression models.
+- eli5: Used for permutation importance analysis.
+- shap: Employed for interpreting SHAP values and creating summary plots.
+
 ### Data Merge - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/data_merge.ipynb" > Code </a>
 - Collecting data 
 - Convert collected data to the same format
@@ -50,7 +59,30 @@ Proposing Solutions from a Socio-Economic Standpoint Based on the Identified Cau
 
 ### Data Preprocessing - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/data_merge.ipynb" > Code </a>
 - Initial Analysis(calculate the percentage of missing values for each feature)
-- Handling Missing Values(more than 20% missing values are dropped)
+- Handling Missing Values
+
+Removing Columns with more than 20% Missing Values
+```ruby
+columns_to_drop = data.columns[data.isnull().mean() > 0.2]
+data = data.drop(columns_to_drop, axis=1)
+data.info()
+```
+Method: Dropped columns with more than 20% missing values.
+Reason: Columns with a high percentage of missing values may not provide meaningful insights.
+
+Imputing Missing Values by Country
+```ruby
+# Interpolated missing values for each column based on time, considering the direction of NaNs
+for dataset in country_data_list:
+    dataset['Year'] = pd.to_datetime(dataset['Year'], format='%Y')
+    dataset.set_index('Year', inplace=True)
+    
+    for column in dataset.columns:
+        dataset[column] = interpolate_with_direction(dataset[column])
+```
+Method: Interpolated missing values based on time, considering the direction of NaNs for each column.
+Reason: Time-based interpolation is suitable for sequential data, and considering the direction of NaNs helps maintain the trend.
+
 - Creating Country-Specific Datasets
 - Automated Handling of Missing Values for Each Country
 - Merging Country-Specific Datasets and Visualization
