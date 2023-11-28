@@ -186,6 +186,20 @@ Result:
 - Excludes specific features for creating 4 new datasets
 - Correlation Analysis on Modified Datasets
 - Feature Selection utilizing Recursive Feature Elimination with Cross-Validation (RFECV) using a RandomForestRegressor
+
+-> after_correlation_data(01,02,03,04).xlsx   
+📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_correlation_data01.xlsx" >after_correlation_data01.xlsx </a>   
+📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_correlation_data02.xlsx" >after_correlation_data02.xlsx </a>   
+📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_correlation_data03.xlsx" >after_correlation_data03.xlsx </a>   
+📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_correlation_data04.xlsx" >after_correlation_data04.xlsx </a>   
+### Preliminary Experiment - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/Preliminary%20Experiment.ipynb" > Code </a>
+- Modeling with XGBoost regression to predict 'BirthRate'
+- Evaluates the model's performance
+
+### Correlation Analysis_RFECV - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/Correlation_Analysis_RFECV.ipynb" > Code </a>
+- Feature Selection using RandomForestRegressor and XGBRegressor
+- Ranks features based on their importance
+- Removes less important features identified by both RandomForestRegressor and XGBRegressor 
 ```ruby
 # Model selection
 models = {
@@ -219,21 +233,7 @@ feature_rankings
 ```
 Purpose: Identify vital features for predicting FertilityRate.  
 Methodology: RFECV applied using RandomForest, XGBoost, and DecisionTree models.
-
--> after_correlation_data(01,02,03,04).xlsx   
-📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_correlation_data01.xlsx" >after_correlation_data01.xlsx </a>   
-📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_correlation_data02.xlsx" >after_correlation_data02.xlsx </a>   
-📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_correlation_data03.xlsx" >after_correlation_data03.xlsx </a>   
-📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_correlation_data04.xlsx" >after_correlation_data04.xlsx </a>   
-### Preliminary Experiment - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/Preliminary%20Experiment.ipynb" > Code </a>
-- Modeling with XGBoost regression to predict 'BirthRate'
-- Evaluates the model's performance
-
-### Correlation Analysis_RFECV - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/Correlation_Analysis_RFECV.ipynb" > Code </a>
-- Feature Selection using RandomForestRegressor and XGBRegressor
-- Ranks features based on their importance
-- Removes less important features identified by both RandomForestRegressor and XGBRegressor 
-
+Result:  
 
 | Feature                       | Ranking_RandomForestRegressor | Ranking_XGBRegressor | Ranking_DecisionTreeRegressor |
 |-------------------------------|------------------------------|----------------------|-------------------------------|
