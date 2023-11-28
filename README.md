@@ -50,7 +50,7 @@ Proposing Solutions from a Socio-Economic Standpoint Based on the Identified Cau
 - eli5: Used for permutation importance analysis.
 - shap: Employed for interpreting SHAP values and creating summary plots.
 
-### Data Merge - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/data_merge.ipynb" > Code </a>
+### Data Merge
 - Collecting data 
 - Convert collected data to the same format
 - Merge data based on Country ID  
@@ -74,48 +74,46 @@ data.info()
 ```
 <class 'pandas.core.frame.DataFrame'>  
 RangeIndex: 480 entries, 0 to 479  
-Data columns (total 30 columns):  
-| #  | Column                       | Non-Null Count |  Dtype  |
-|----|------------------------------|----------------|---------|
-| 0  | ID                           | 480 non-null   | Object  |
-| 1  | Year                         | 480 non-null   | int64   |
-| 2  | Country Name                 | 480 non-null   | Object  |
-| 3  | FertilityRate                | 480 non-null   | float64 |
-| 4  | FemaleLaborParticipationRate | 480 non-null   | float64 |
-| 5  | AvgHoursWorked               | 453 non-null   | float64 |
-| 6  | BothWorking                  | 191 non-null   | float64 |
-| 7  | FirstBirthAge                | 455 non-null   | float64 |
-| 8  | MarriageAge                  | 174 non-null   | float64 |
-| 9  | MarriageRate                 | 406 non-null   | float64 |
-| 10 | EmploymentRate               | 465 non-null   | float64 |
-| 11 | UnemploymentRate             | 434 non-null   | float64 |
-| 12 | HousingPrice                 | 414 non-null   | float64 |
-| 13 | InterestRate                 | 432 non-null   | float64 |
-| 14 | PartTimeRate                 | 462 non-null   | float64 |
-| 15 | FamilyExpenditure            | 445 non-null   | float64 |
-| 16 | HealthExpenditure            | 318 non-null   | float64 |
-| 17 | LaborMarketExpenditure       | 415 non-null   | float64 |
-| 18 | UnemploymentExpenditure      | 446 non-null   | float64 |
-| 19 | GDI                          | 470 non-null   | float64 |
-| 20 | GDP                          | 479 non-null   | float64 |
-| 21 | GNI                          | 455 non-null   | float64 |
-| 22 | PovertyGap                   | 308 non-null   | float64 |
-| 23 | EduExpenditureOfGDP          | 415 non-null   | float64 |
-| 24 | EduExpenditureOfGov          | 370 non-null   | float64 |
-| 25 | TotalLaborParticipationRate  | 480 non-null   | float64 |
-| 26 | DivorceRate                  | 441 non-null   | float64 |
-| 27 | InflationRate                | 480 non-null   | float64 |
-| 28 | Population                   | 480 non-null   | float64 |  
-
-dtypes: float64(27), int64(1), object(2)  
-memory usage: 112.6+ KB  
+Data columns (total 28 columns):  
+| #   | Column                        | Non-Null Count | Dtype    |
+| --- | ----------------------------- | -------------- | -------- |
+| 0   | ID                            | 480            | object   |
+| 1   | Year                          | 480            | int64    |
+| 2   | Country Name                  | 480            | object   |
+| 3   | FemaleLaborParticipationRate  | 480            | float64  |
+| 4   | AvgHoursWorked                | 453            | float64  |
+| 5   | BothWorking                   | 191            | float64  |
+| 6   | FirstBirthAge                 | 455            | float64  |
+| 7   | MarriageAge                   | 174            | float64  |
+| 8   | MarriageRate                  | 406            | float64  |
+| 9   | EmploymentRate                | 465            | float64  |
+| 10  | UnemploymentRate              | 434            | float64  |
+| 11  | HousingPrice                  | 414            | float64  |
+| 12  | InterestRate                  | 432            | float64  |
+| 13  | PartTimeRate                  | 462            | float64  |
+| 14  | FamilyExpenditure             | 445            | float64  |
+| 15  | HealthExpenditure             | 318            | float64  |
+| 16  | LaborMarketExpenditure        | 415            | float64  |
+| 17  | UnemploymentExpenditure       | 446            | float64  |
+| 18  | GDI                           | 470            | float64  |
+| 19  | GDP                           | 479            | float64  |
+| 20  | GNI                           | 455            | float64  |
+| 21  | PovertyGap                    | 308            | float64  |
+| 22  | EduExpenditureOfGDP           | 415            | float64  |
+| 23  | EduExpenditureOfGov           | 370            | float64  |
+| 24  | TotalLaborParticipationRate   | 480            | float64  |
+| 25  | InflationRate                 | 480            | float64  |
+| 26  | Population                    | 480            | float64  |
+| 27  | FertilityRate                 | 480            | float64  |  
+dtypes: float64(25), int64(1), object(2)  
+memory usage: 105.1+ KB  
 📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/merged_data.xlsx" >merged_data.xlsx </a>
 
-### Data Preprocessing - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/data_merge.ipynb" > Code </a>
+### Data Preprocessing - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/data_preprocessing(handle_missing_value).ipynb" > Code </a>
 - Initial Analysis(calculate the percentage of missing values for each feature)
 - Handling Missing Values
 
-Removing Columns with more than 20% Missing Values
+* Removing Columns with more than 20% Missing Values
 ```ruby
 columns_to_drop = data.columns[data.isnull().mean() > 0.2]
 data = data.drop(columns_to_drop, axis=1)
@@ -123,7 +121,7 @@ data = data.drop(columns_to_drop, axis=1)
 Method: Dropped columns with more than 20% missing values.  
 Reason: Columns with a high percentage of missing values may not provide meaningful insights.
 
-Imputing Missing Values by Country
+* Imputing Missing Values by Country
 ```ruby
 # Interpolated missing values for each column based on time, considering the direction of NaNs
 for dataset in country_data_list:
