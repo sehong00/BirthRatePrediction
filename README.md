@@ -201,9 +201,9 @@ Result:
 ```ruby
 # Model selection
 models = {
-    'RandomForestRegressor': RandomForestRegressor(random_state=42),
-    'XGBRegressor': XGBRegressor(random_state=42),
-    'DecisionTreeRegressor': DecisionTreeRegressor(random_state=42)
+    'RandomForestRegressor': RandomForestRegressor(random_state=0),
+    'XGBRegressor': XGBRegressor(random_state=0),
+    'DecisionTreeRegressor': DecisionTreeRegressor(random_state=0)
 }
 
 # Feature ranking
@@ -282,15 +282,15 @@ Result:
 
 - Best Hyperparameter
     - Check all combinations to determine best hyperparameters based on MSE
-    - 'n_estimators': 200
-    - 'max_depth': 10
-    - 'min_samples_split': 5
-    - 'min_samples_leaf': 2
+    - 'n_estimators': 100
+    - 'max_depth': 20
+    - 'min_samples_split': 2
+    - 'min_samples_leaf': 1
 
 - Performance
-    - MSE : 0.033935
-    - R2 : 0.145540
-    - MAE : 0.132456
+    - MSE : 0.028746
+    - R2 : 0.276193
+    - MAE : 0.121922
 
 2. XGBoostRegressor
 - This model uses a gradient boosting method that combines multiple decision trees to make predictions, and is known for its high performance and fast processing speed. XGBoostRegressor provides high accuracy even in complex datasets, and can optimize model performance by adjusting various hyperparameters.
@@ -301,14 +301,14 @@ Result:
     - 'learning_rate': The step size shrinkage used in updating tree weights
 
 - Best Hyperparameter
-    - 'n_estimators': 200
+    - 'n_estimators': 300
     - 'max_depth': 3
-    - 'learning_rate': 0.2
+    - 'learning_rate': 0.1
 
 - Performance
-    - MSE : 0.012513
-    - R2 : 0.684921
-    - MAE : 0.087852
+    - MSE : 0.012142
+    - R2 : 0.694262
+    - MAE : 0.089414
 
 3. DecisionTreeRegressor
 - a machine learning model used for regression tasks, which predicts continuous output values. It builds a tree-like model of decisions, where each node represents a feature, and branches represent decision rules, ultimately leading to a prediction at the leaves. This model is known for its simplicity, interpretability, and ability to capture non-linear relationships in data.
@@ -320,11 +320,11 @@ Result:
 
 - Best Hyperparameter
     - 'max_depth': 10
-    - 'min_samples_split': 10
+    - 'min_samples_split': 2
     - 'min_samples_leaf': 4
 
 #### Model Selection
-- **XGBoostRegressor** : Based on the results, the XGBoostRegressor is the best choice among the three models. It achieves the lowest mean squared error (MSE) on the test set (0.012513) and the highest R² score (0.684921).
+- **XGBoostRegressor** : Based on the results, the XGBoostRegressor is the best choice among the three models. It achieves the lowest mean squared error (MSE) on the test set (0.012142) and the highest R² score (0.694262).
 
 
 ### Compare performance
