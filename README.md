@@ -164,7 +164,11 @@ Reason: Time-based interpolation is suitable for sequential data, and considerin
 
 📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_extraction_data.xlsx" >after_extraction_data.xlsx </a>
 
-### Correlation Analysis - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/Correlation_Analysis.ipynb" > Code </a>
+### Preliminary Experiment - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/Preliminary%20Experiment.ipynb" > Code </a>
+- Modeling with XGBoost regression to predict 'BirthRate'
+- Evaluates the model's performance
+
+### Correlation Analysis_RFECV - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/Correlation_Analysis_RFECV.ipynb" > Code </a>
 - Correlation Analysis using heatmap
 ```ruby
 plt.figure(figsize=(12, 10))
@@ -181,21 +185,7 @@ Purpose: Examine pairwise feature correlations.
 Methodology: Heatmap using Seaborn.  
 Result:  
 ![image](https://github.com/oosedus/BirthratePrediction/assets/52899383/fca2dfcb-c754-40aa-948e-0bbfab01b552)
-- Excludes specific features for creating 4 new datasets
-- Correlation Analysis on Modified Datasets
-- Feature Selection utilizing Recursive Feature Elimination with Cross-Validation (RFECV) using a RandomForestRegressor
-
--> after_correlation_data(01,02,03,04).xlsx   
-📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_correlation_data01.xlsx" >after_correlation_data01.xlsx </a>   
-📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_correlation_data02.xlsx" >after_correlation_data02.xlsx </a>   
-📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_correlation_data03.xlsx" >after_correlation_data03.xlsx </a>   
-📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_correlation_data04.xlsx" >after_correlation_data04.xlsx </a>   
-### Preliminary Experiment - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/Preliminary%20Experiment.ipynb" > Code </a>
-- Modeling with XGBoost regression to predict 'BirthRate'
-- Evaluates the model's performance
-
-### Correlation Analysis_RFECV - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/Correlation_Analysis_RFECV.ipynb" > Code </a>
-- Feature Selection using RandomForestRegressor and XGBRegressor
+- Feature Selection utilizing Recursive Feature Elimination with Cross-Validation (RFECV) using a RandomForestRegressor and XGBRegressor
 - Ranks features based on their importance
 - Removes less important features identified by both RandomForestRegressor and XGBRegressor 
 ```ruby
