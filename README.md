@@ -54,6 +54,20 @@ Proposing Solutions from a Socio-Economic Standpoint Based on the Identified Cau
 - Collecting data 
 - Convert collected data to the same format
 - Merge data based on Country ID  
+```ruby
+data.describe()
+```
+5 Examples  
+|        | BirthRate  | AvgHoursWorked | BothWorking | FirstBirthAge | MarriageAge |
+|--------|------------|----------------|-------------|---------------|-------------|
+| conunt | 480.000000 |     453.000000 |   191.00000 |    455.000000 |  174.000000 |
+|   mean |  10.296250 |    1714.458318 |    53.27801 |     29.860879 |   28.442529 |
+|    std |   1.719429 |     165.567786	|     8.97173 |      1.456630 |    2.434869 |
+|    min |   5.100000 |    1319.131000 |    33.90000 |     25.600000 |   22.200000 |
+|    25% |   9.400000 |    1592.659000	|    46.70000 |     29.000000 |   26.600000 |
+|    50% |   9.900000 |    1716.341000 |    52.00000 |     29.900000 |   28.800000 |
+|    75% |  11.200000 |    1811.852000 |    61.90000 |     30.900000 |   30.475000 |
+|    max |  16.700000 |    2228.000000 |    71.00000 |     33.400000 |   32.900000 |  
 
 ```ruby
 data.info()
