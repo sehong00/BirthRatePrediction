@@ -265,7 +265,7 @@ Methodology: RFECV applied using RandomForest, XGBoost, and DecisionTree models.
 
 
 
-### Final Data Analysis <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/Model.ipynb" > Code </a>
+### Final Data Analysis - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/Model.ipynb" > Code </a>
 
 #### Train/Valid/Test Dataset
 - Train : 1990-2025
@@ -343,6 +343,12 @@ Methodology: RFECV applied using RandomForest, XGBoost, and DecisionTree models.
 ### Results
 
 #### SHAP(XGBoost Regressor)
+- Why we used "SHAP" 
+    - We used SHAP to determine which characteristics are most influential on fertility. By calculating the impact of each trait on the forecast, we can understand the importance of the traits and use this to inform policy discussions around traits.
+
+    - SHAP (SHapley Additive exPlanations) is a tool that helps explain model predictions and understand how much each trait contributes to the prediction. 
+SHAP values evaluate the contribution of any combination of traits, so it can be computationally expensive for large datasets or complex models, but we felt that we were able to account for relatively all of them, and it helped us understand the importance of traits.
+
 ![SHAP1](https://github.com/oosedus/BirthratePrediction/assets/75584814/cdcd2bd9-253f-4255-a6ad-8db537f2b90c)
 
 ![SHAP2](https://github.com/oosedus/BirthratePrediction/assets/75584814/824ab16f-938c-46a0-ab1f-1ef86b622806)
