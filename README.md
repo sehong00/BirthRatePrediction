@@ -114,9 +114,56 @@ Reason: Time-based interpolation is suitable for sequential data, and considerin
 
 ### Correlation Analysis - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/Correlation_Analysis.ipynb" > Code </a>
 - Correlation Analysis using heatmap
+```ruby
+plt.figure(figsize=(12, 10))
+sns.heatmap(corr_matrix, annot=True, fmt=".2f", cmap='coolwarm',
+            xticklabels=corr_matrix.columns,
+            yticklabels=corr_matrix.columns)
+plt.title('Correlation Matrix')
+plt.xticks(rotation=45, ha='right')
+plt.yticks(rotation=0)
+plt.tight_layout()
+plt.show()
+```
+Purpose: Examine pairwise feature correlations.  
+Methodology: Heatmap using Seaborn.
+
 - Excludes specific features for creating 4 new datasets
 - Correlation Analysis on Modified Datasets
-- Feature Selection utilizing RFECV using a RandomForestRegressor
+- Feature Selection utilizing Recursive Feature Elimination with Cross-Validation (RFECV) using a RandomForestRegressor
+```ruby
+# Model selection
+models = {
+    'RandomForestRegressor': RandomForestRegressor(random_state=42),
+    'XGBRegressor': XGBRegressor(random_state=42),
+    'DecisionTreeRegressor': DecisionTreeRegressor(random_state=42)
+}
+
+# Feature ranking
+feature_rankings = pd.DataFrame()
+
+for model_name, model in models.items():
+    rfecv = RFECV(estimator=model, step=1, cv=5, scoring='neg_mean_squared_error')
+    rfecv.fit(X, y)
+    
+    # Create a ranking dataframe
+    ranking_df = pd.DataFrame({
+        'Feature': X.columns,
+        f'Ranking_{model_name}': rfecv.ranking_
+    })
+    
+    # Merge rankings
+    if feature_rankings.empty:
+        feature_rankings = ranking_df
+    else:
+        feature_rankings = feature_rankings.merge(ranking_df, on='Feature')
+
+# Sort and display rankings
+feature_rankings = feature_rankings.sort_values(by='Ranking_RandomForestRegressor')
+feature_rankings
+```
+Purpose: Identify vital features for predicting FertilityRate.  
+Methodology: RFECV applied using RandomForest, XGBoost, and DecisionTree models.
 
 -> after_correlation_data(01,02,03,04).xlsx   
 📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/after_correlation_data01.xlsx" >after_correlation_data01.xlsx </a>   
