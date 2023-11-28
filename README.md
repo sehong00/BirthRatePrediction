@@ -235,17 +235,126 @@ Methodology: RFECV applied using RandomForest, XGBoost, and DecisionTree models.
 - Removes less important features identified by both RandomForestRegressor and XGBRegressor 
 
 
+| Feature                       | Ranking_RandomForestRegressor | Ranking_XGBRegressor | Ranking_DecisionTreeRegressor |
+|-------------------------------|------------------------------|----------------------|-------------------------------|
+| FemaleLaborParticipationRate  | 1                            | 1                    | 1                             |
+| WorkLeisureBalanceIndex       | 1                            | 1                    | 7                             |
+| InflationRate                 | 1                            | 9                    | 1                             |
+| TotalLaborParticipationRate   | 1                            | 8                    | 1                             |
+| WeeksPaidLeaveForMothers      | 1                            | 1                    | 1                             |
+| EduExpenditureOfGDP           | 1                            | 1                    | 1                             |
+| GNI                           | 1                            | 3                    | 6                             |
+| GDP                           | 1                            | 7                    | 4                             |
+| GDI                           | 1                            | 6                    | 8                             |
+| LaborMarketStability          | 1                            | 2                    | 2                             |
+| UnemploymentExpenditure       | 1                            | 1                    | 1                             |
+| InterestRate                  | 1                            | 4                    | 3                             |
+| HousingPrice                  | 1                            | 1                    | 1                             |
+| UnemploymentRate              | 1                            | 1                    | 5                             |
+| EmploymentRate                | 1                            | 1                    | 1                             |
+| FirstBirthAge                 | 1                            | 1                    | 1                             |
+| AvgHoursWorked                | 1                            | 1                    | 1                             |
+| FamilyExpenditure             | 1                            | 1                    | 1                             |
+| HousingAffordabilityIndex     | 1                            | 1                    | 1                             |
+| MarriageRate                  | 2                            | 5                    | 1                             |
+| PartTimeRate                  | 3                            | 1                    | 1                             |
+
+
 📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/data_rf.xlsx" >data_rf.xlsx </a>   
 📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/data_xgb.xlsx" >data_xgb.xlsx </a>
-### Final Data Analysis
-- 
+
+
+
+### Final Data Analysis <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/Model.ipynb" > Code </a>
+
+#### Train/Valid/Test Dataset
+- Train : 1990-2025
+- Valid : 2016-2028
+- Test : 2019-2021
+
+#### Model Training
+1. RandomForestRegressor
+- a machine learning model that uses an ensemble of decision trees to make predictions, particularly useful for regression tasks. It's known for its high accuracy and ability to handle large datasets with numerous input variables.
+
+- Hyperparameter
+    - 'n_estimators': The number of trees in the forest
+    - 'max_depth': The maximum depth of each tree
+    - 'min_samples_split': The minimum number of samples required to split an internal node
+    - 'min_samples_leaf': The minimum number of samples required to be at a leaf node
+
+- Best Hyperparameter
+    - Check all combinations to determine best hyperparameters based on MSE
+    - 'n_estimators': 200
+    - 'max_depth': 10
+    - 'min_samples_split': 5
+    - 'min_samples_leaf': 2
+
+- Performance
+    - MSE : 0.033935
+    - R2 : 0.145540
+    - MAE : 0.132456
+
+2. XGBoostRegressor
+- This model uses a gradient boosting method that combines multiple decision trees to make predictions, and is known for its high performance and fast processing speed. XGBoostRegressor provides high accuracy even in complex datasets, and can optimize model performance by adjusting various hyperparameters.
+
+- Hyperparameter
+    - 'n_estimators': The number of boosting stages to be run
+    - 'max_depth': The maximum depth of a tree
+    - 'learning_rate': The step size shrinkage used in updating tree weights
+
+- Best Hyperparameter
+    - 'n_estimators': 200
+    - 'max_depth': 3
+    - 'learning_rate': 0.2
+
+- Performance
+    - MSE : 0.012513
+    - R2 : 0.684921
+    - MAE : 0.087852
+
+3. DecisionTreeRegressor
+- a machine learning model used for regression tasks, which predicts continuous output values. It builds a tree-like model of decisions, where each node represents a feature, and branches represent decision rules, ultimately leading to a prediction at the leaves. This model is known for its simplicity, interpretability, and ability to capture non-linear relationships in data.
+
+- Hyperparameter
+    - 'max_depth': The maximum depth of each tree
+    - 'min_samples_split': The minimum number of samples required to split an internal node
+    - 'min_samples_leaf': The minimum number of samples required to be at a leaf node
+
+- Best Hyperparameter
+    - 'max_depth': 10
+    - 'min_samples_split': 10
+    - 'min_samples_leaf': 4
+
+#### Model Selection
+- **XGBoostRegressor** : Based on the results, the XGBoostRegressor is the best choice among the three models. It achieves the lowest mean squared error (MSE) on the test set (0.012513) and the highest R² score (0.684921).
+
 
 ### Compare performance
 
--
+#### RandomForest Regressor
+![RandomForest](https://github.com/oosedus/BirthratePrediction/assets/75584814/abd6e5b8-c901-463d-a1fd-7911ddc940d1)
+
+#### XGBoost Regressor
+![XGBoost](https://github.com/oosedus/BirthratePrediction/assets/75584814/516abb96-0012-4d2e-a739-b8b78d304761)
+
+#### DecisionTree Regressor
+![DecisionTree](https://github.com/oosedus/BirthratePrediction/assets/75584814/478d6577-8e12-4eab-a856-d8bcf73b3981)
 
 ### Results
--
+
+#### SHAP(XGBoost Regressor)
+![SHAP1](https://github.com/oosedus/BirthratePrediction/assets/75584814/cdcd2bd9-253f-4255-a6ad-8db537f2b90c)
+
+![SHAP2](https://github.com/oosedus/BirthratePrediction/assets/75584814/824ab16f-938c-46a0-ab1f-1ef86b622806)
+
+The results are not surprising, but they are generally understood. The most influential is the age at first birth, with higher ages having a negative effect on fertility. The data below can be interpreted in a similar way to the age at first birth.
+
+### Limitations
+
+The time-based interpolation method was used to fill in the missing values of the data taken from OECD data, but the accuracy of the data and the reliability of the predicted values are poor. To secure this, it seems that a more accurate data set should be obtained during data collection and a more accurate interpolation method should be used during data preprocessing. 
+In addition, there are too many factors that contribute to Korea's declining fertility rate.
+It is doubtful that the specific characteristics of the 15-country dataset can be applied to Korea and lead to a positive change in the fertility rate.
+
 
 
 
