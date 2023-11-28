@@ -330,13 +330,13 @@ Result:
 ### Compare performance
 
 #### RandomForest Regressor
-![RandomForest](https://github.com/oosedus/BirthratePrediction/assets/75584814/abd6e5b8-c901-463d-a1fd-7911ddc940d1)
+![RandomForest](https://github.com/oosedus/BirthratePrediction/assets/52899383/6d7845f3-5935-45a8-a609-f5a8ca6d3d05)
 
 #### XGBoost Regressor
-![XGBoost](https://github.com/oosedus/BirthratePrediction/assets/75584814/516abb96-0012-4d2e-a739-b8b78d304761)
+![XGBoost](https://github.com/oosedus/BirthratePrediction/assets/52899383/bb844c46-dd63-43ab-877d-51e0e1653ffb)
 
 #### DecisionTree Regressor
-![DecisionTree](https://github.com/oosedus/BirthratePrediction/assets/75584814/478d6577-8e12-4eab-a856-d8bcf73b3981)
+![DecisionTree](https://github.com/oosedus/BirthratePrediction/assets/52899383/7bbcae16-7717-4278-9ba8-d731ae90306b)
 
 ### Results
 
@@ -347,9 +347,10 @@ Result:
     - SHAP (SHapley Additive exPlanations) is a tool that helps explain model predictions and understand how much each trait contributes to the prediction. 
 SHAP values evaluate the contribution of any combination of traits, so it can be computationally expensive for large datasets or complex models, but we felt that we were able to account for relatively all of them, and it helped us understand the importance of traits.
 
-![SHAP1](https://github.com/oosedus/BirthratePrediction/assets/75584814/cdcd2bd9-253f-4255-a6ad-8db537f2b90c)
+![SHAP1](https://github.com/oosedus/BirthratePrediction/assets/52899383/df30f5be-3222-44f1-ac38-92fc69860c0b)
 
-![SHAP2](https://github.com/oosedus/BirthratePrediction/assets/75584814/824ab16f-938c-46a0-ab1f-1ef86b622806)
+![SHAP2](https://github.com/oosedus/BirthratePrediction/assets/52899383/7a94cb26-925c-4cc0-8225-7bbe3fce04f9)
+
 
 The results are not surprising, but they are generally understood. The most influential is the age at first birth, with higher ages having a negative effect on fertility. The data below can be interpreted in a similar way to the age at first birth.
 
