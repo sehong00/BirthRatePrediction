@@ -258,8 +258,7 @@ Result:
 
 
 
-📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/data_rf.xlsx" >data_rf.xlsx </a>   
-📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/data_xgb.xlsx" >data_xgb.xlsx </a>
+📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/Final_Data.xlsx" >Final_Data.xlsx </a>   
 
 
 
