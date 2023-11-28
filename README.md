@@ -232,7 +232,7 @@ feature_rankings = feature_rankings.sort_values(by='Ranking_RandomForestRegresso
 feature_rankings
 ```
 Purpose: Identify vital features for predicting FertilityRate.  
-Methodology: RFECV applied using RandomForest, XGBoost, and DecisionTree models.
+Methodology: RFECV applied using RandomForest, XGBoost, and DecisionTree models.  
 Result:  
 
 | Feature                       | Ranking_RandomForestRegressor | Ranking_XGBRegressor | Ranking_DecisionTreeRegressor |
