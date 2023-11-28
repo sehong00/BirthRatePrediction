@@ -114,15 +114,15 @@ memory usage: 105.1+ KB
 - Initial Analysis(calculate the percentage of missing values for each feature)
 - Handling Missing Values
 
-    * Removing Columns with more than 20% Missing Values  
+Removing Columns with more than 20% Missing Values  
 ```ruby
 columns_to_drop = data.columns[data.isnull().mean() > 0.2]
 data = data.drop(columns_to_drop, axis=1)
 ```
 Method: Dropped columns with more than 20% missing values.  
-Reason: Columns with a high percentage of missing values may not provide meaningful insights.
-
-    -* Imputing Missing Values by Country  
+Reason: Columns with a high percentage of missing values may not provide meaningful insights.  
+  
+Imputing Missing Values by Country  
 ```ruby
 # Interpolated missing values for each column based on time, considering the direction of NaNs
 for dataset in country_data_list:
