@@ -105,7 +105,7 @@ Data columns (total 28 columns):
 | 25  | InflationRate                 | 480            | float64  |
 | 26  | Population                    | 480            | float64  |
 | 27  | FertilityRate                 | 480            | float64  |  
-
+  
 dtypes: float64(25), int64(1), object(2)  
 memory usage: 105.1+ KB  
 📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/merged_data.xlsx" >merged_data.xlsx </a>
