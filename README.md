@@ -122,7 +122,7 @@ data = data.drop(columns_to_drop, axis=1)
 Method: Dropped columns with more than 20% missing values.  
 Reason: Columns with a high percentage of missing values may not provide meaningful insights.
 
-    * Imputing Missing Values by Country  
+    -* Imputing Missing Values by Country  
 ```ruby
 # Interpolated missing values for each column based on time, considering the direction of NaNs
 for dataset in country_data_list:
