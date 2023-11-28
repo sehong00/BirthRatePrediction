@@ -102,10 +102,9 @@ Data columns (total 30 columns):
 | 22 | PovertyGap                   | 308 non-null   | float64 |
 | 23 | EduExpenditureOfGDP          | 415 non-null   | float64 |
 | 24 | EduExpenditureOfGov          | 370 non-null   | float64 |
-| 25 | WeeksPaidLeaveForMothers     | 480 non-null   | float64 |
-| 26 | TotalLaborParticipationRate  | 480 non-null   | float64 |
-| 27 | DivorceRate                  | 441 non-null   | float64 |
-| 28 | InflationRate                | 480 non-null   | float64 |
+| 25 | TotalLaborParticipationRate  | 480 non-null   | float64 |
+| 26 | DivorceRate                  | 441 non-null   | float64 |
+| 27 | InflationRate                | 480 non-null   | float64 |
 | 28 | Population                   | 480 non-null   | float64 |  
 
 dtypes: float64(27), int64(1), object(2)  
@@ -241,7 +240,6 @@ Result:
 | WorkLeisureBalanceIndex       | 1                            | 1                    | 7                             |
 | InflationRate                 | 1                            | 9                    | 1                             |
 | TotalLaborParticipationRate   | 1                            | 8                    | 1                             |
-| WeeksPaidLeaveForMothers      | 1                            | 1                    | 1                             |
 | EduExpenditureOfGDP           | 1                            | 1                    | 1                             |
 | GNI                           | 1                            | 3                    | 6                             |
 | GDP                           | 1                            | 7                    | 4                             |
