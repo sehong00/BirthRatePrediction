@@ -58,9 +58,9 @@ Proposing Solutions from a Socio-Economic Standpoint Based on the Identified Cau
 ```ruby
 data.info()
 ```
-<class 'pandas.core.frame.DataFrame'>
-RangeIndex: 480 entries, 0 to 479
-Data columns (total 30 columns):
+<class 'pandas.core.frame.DataFrame'>  
+RangeIndex: 480 entries, 0 to 479  
+Data columns (total 30 columns):  
 | #  | Column                       | Non-Null Count |  Dtype  |
 |----|------------------------------|----------------|---------|
 | 0  | ID                           | 480 non-null   | Object  |
@@ -93,8 +93,9 @@ Data columns (total 30 columns):
 | 27 | DivorceRate                  | 441 non-null   | float64 |
 | 28 | InflationRate                | 480 non-null   | float64 |
 | 28 | Population                   | 480 non-null   | float64 |  
-dtypes: float64(27), int64(1), object(2)
-memory usage: 112.6+ KB
+
+dtypes: float64(27), int64(1), object(2)  
+memory usage: 112.6+ KB  
 📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/merged_data.xlsx" >merged_data.xlsx </a>
 
 ### Data Preprocessing - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/data_merge.ipynb" > Code </a>
