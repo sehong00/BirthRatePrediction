@@ -67,7 +67,7 @@ columns_to_drop = data.columns[data.isnull().mean() > 0.2]
 data = data.drop(columns_to_drop, axis=1)
 data.info()
 ```
-Method: Dropped columns with more than 20% missing values.
+Method: Dropped columns with more than 20% missing values.  
 Reason: Columns with a high percentage of missing values may not provide meaningful insights.
 
 Imputing Missing Values by Country
@@ -80,7 +80,7 @@ for dataset in country_data_list:
     for column in dataset.columns:
         dataset[column] = interpolate_with_direction(dataset[column])
 ```
-Method: Interpolated missing values based on time, considering the direction of NaNs for each column.
+Method: Interpolated missing values based on time, considering the direction of NaNs for each column.  
 Reason: Time-based interpolation is suitable for sequential data, and considering the direction of NaNs helps maintain the trend.
 
 - Creating Country-Specific Datasets
@@ -97,8 +97,14 @@ Reason: Time-based interpolation is suitable for sequential data, and considerin
 ### Feature Extraction - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/Feature%20Extraction.ipynb" > Code </a>
 - Create new features from existing features
     * Work Leisure Balance Index = 'AvgHoursWorked' / 'TotalLaborParticipationRate'
+ It reflects the interplay between work intensity and leisure time in the labor market. A high index suggests a scenario with prolonged working hours and reduced participation, indicating an environment of intense work and limited leisure. This condition may contribute to lower birth rates. In contrast, a low index points to shorter working hours and higher participation, indicating a balanced environment with ample leisure time. Such conditions may foster a more favorable atmosphere for higher birth rates.
+      
     * Labor Market Stability = ‘EmploymentRate’ / ‘UnemploymentRate’
+ It is served as a crucial indicator for evaluating the health and stability of the labor market. A higher ratio signifies a stable labor market characterized by high employment and low unemployment rates. Conversely, a lower ratio indicates an unstable labor market with lower employment and higher unemployment rates. 
+      
     * Hosing Affordability Index = ‘HousingPrice’ / ‘PerCapitaGDP’
+  It offers comprehensive measure of the economic feasibility of homeownership relative to individual or household income levels. A lower index value suggests that purchasing a house is more affordable, potentially alleviating financial stress on families and encouraging higher birth rates. Conversely, a higher index value indicates that buying a house is financially burdensome in relation to personal income, possibly leading to increased financial strain and acting as a deterrent to family expansion.
+      
 - Deletion of Unnecessary Features
     * PerCapitaGDP = ‘GDP’ / ‘Population’
     * Population
