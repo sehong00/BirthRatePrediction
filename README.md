@@ -53,8 +53,48 @@ Proposing Solutions from a Socio-Economic Standpoint Based on the Identified Cau
 ### Data Merge - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/data_merge.ipynb" > Code </a>
 - Collecting data 
 - Convert collected data to the same format
-- Merge data based on Country ID
+- Merge data based on Country ID  
 
+```ruby
+data.info()
+```
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 480 entries, 0 to 479
+Data columns (total 30 columns):
+| #  | Column                       | Non-Null Count |  Dtype  |
+|----|------------------------------|----------------|---------|
+| 0  | ID                           | 480 non-null   | Object  |
+| 1  | Year                         | 480 non-null   | int64   |
+| 2  | Country Name                 | 480 non-null   | Object  |
+| 3  | BirthRate                    | 480 non-null   | float64 |
+| 4  | FemaleLaborParticipationRate | 480 non-null   | float64 |
+| 5  | AvgHoursWorked               | 453 non-null   | float64 |
+| 6  | BothWorking                  | 191 non-null   | float64 |
+| 7  | FirstBirthAge                | 455 non-null   | float64 |
+| 8  | MarriageAge                  | 174 non-null   | float64 |
+| 9  | MarriageRate                 | 406 non-null   | float64 |
+| 10 | EmploymentRate               | 465 non-null   | float64 |
+| 11 | UnemploymentRate             | 434 non-null   | float64 |
+| 12 | HousingPrice                 | 414 non-null   | float64 |
+| 13 | InterestRate                 | 432 non-null   | float64 |
+| 14 | PartTimeRate                 | 462 non-null   | float64 |
+| 15 | FamilyExpenditure            | 445 non-null   | float64 |
+| 16 | HealthExpenditure            | 318 non-null   | float64 |
+| 17 | LaborMarketExpenditure       | 415 non-null   | float64 |
+| 18 | UnemploymentExpenditure      | 446 non-null   | float64 |
+| 19 | GDI                          | 470 non-null   | float64 |
+| 20 | GDP                          | 479 non-null   | float64 |
+| 21 | GNI                          | 455 non-null   | float64 |
+| 22 | PovertyGap                   | 308 non-null   | float64 |
+| 23 | EduExpenditureOfGDP          | 415 non-null   | float64 |
+| 24 | EduExpenditureOfGov          | 370 non-null   | float64 |
+| 25 | WeeksPaidLeaveForMothers     | 480 non-null   | float64 |
+| 26 | TotalLaborParticipationRate  | 480 non-null   | float64 |
+| 27 | DivorceRate                  | 441 non-null   | float64 |
+| 28 | InflationRate                | 480 non-null   | float64 |
+| 28 | Population                   | 480 non-null   | float64 |  
+dtypes: float64(27), int64(1), object(2)
+memory usage: 112.6+ KB
 📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/merged_data.xlsx" >merged_data.xlsx </a>
 
 ### Data Preprocessing - <a href="https://github.com/oosedus/BirthratePrediction/blob/main/Code/data_merge.ipynb" > Code </a>
@@ -65,7 +105,6 @@ Removing Columns with more than 20% Missing Values
 ```ruby
 columns_to_drop = data.columns[data.isnull().mean() > 0.2]
 data = data.drop(columns_to_drop, axis=1)
-data.info()
 ```
 Method: Dropped columns with more than 20% missing values.  
 Reason: Columns with a high percentage of missing values may not provide meaningful insights.
