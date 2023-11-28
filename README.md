@@ -127,7 +127,8 @@ plt.show()
 ```
 Purpose: Examine pairwise feature correlations.  
 Methodology: Heatmap using Seaborn.
-
+Result:  
+![correlation matrix](https://github.com/oosedus/BirthratePrediction/assets/52899383/a97a4379-4fae-4a76-8ed0-e9943b56f6d2)
 - Excludes specific features for creating 4 new datasets
 - Correlation Analysis on Modified Datasets
 - Feature Selection utilizing Recursive Feature Elimination with Cross-Validation (RFECV) using a RandomForestRegressor
