@@ -180,7 +180,7 @@ plt.show()
 Purpose: Examine pairwise feature correlations.  
 Methodology: Heatmap using Seaborn.  
 Result:  
-![correlation matrix](https://github.com/oosedus/BirthratePrediction/assets/52899383/a97a4379-4fae-4a76-8ed0-e9943b56f6d2)
+![image](https://github.com/oosedus/BirthratePrediction/assets/52899383/fca2dfcb-c754-40aa-948e-0bbfab01b552)
 - Excludes specific features for creating 4 new datasets
 - Correlation Analysis on Modified Datasets
 - Feature Selection utilizing Recursive Feature Elimination with Cross-Validation (RFECV) using a RandomForestRegressor
@@ -233,28 +233,29 @@ Purpose: Identify vital features for predicting FertilityRate.
 Methodology: RFECV applied using RandomForest, XGBoost, and DecisionTree models.  
 Result:  
 
-| Feature                       | Ranking_RandomForestRegressor | Ranking_XGBRegressor | Ranking_DecisionTreeRegressor |
-|-------------------------------|------------------------------|----------------------|-------------------------------|
-| FemaleLaborParticipationRate  | 1                            | 1                    | 1                             |
-| WorkLeisureBalanceIndex       | 1                            | 1                    | 7                             |
-| InflationRate                 | 1                            | 9                    | 1                             |
-| TotalLaborParticipationRate   | 1                            | 8                    | 1                             |
-| EduExpenditureOfGDP           | 1                            | 1                    | 1                             |
-| GNI                           | 1                            | 3                    | 6                             |
-| GDP                           | 1                            | 7                    | 4                             |
-| GDI                           | 1                            | 6                    | 8                             |
-| LaborMarketStability          | 1                            | 2                    | 2                             |
-| UnemploymentExpenditure       | 1                            | 1                    | 1                             |
-| InterestRate                  | 1                            | 4                    | 3                             |
-| HousingPrice                  | 1                            | 1                    | 1                             |
-| UnemploymentRate              | 1                            | 1                    | 5                             |
-| EmploymentRate                | 1                            | 1                    | 1                             |
-| FirstBirthAge                 | 1                            | 1                    | 1                             |
-| AvgHoursWorked                | 1                            | 1                    | 1                             |
-| FamilyExpenditure             | 1                            | 1                    | 1                             |
-| HousingAffordabilityIndex     | 1                            | 1                    | 1                             |
-| MarriageRate                  | 2                            | 5                    | 1                             |
-| PartTimeRate                  | 3                            | 1                    | 1                             |
+| Feature                     | RandomForest | XGBRegressor | DecisionTree |
+| --------------------------- | ------------- | ------------- | ------------ |
+| FemaleLaborParticipationRate| 1             | 1             | 1            |
+| WorkLeisureBalanceIndex     | 1             | 4             | 8            |
+| TotalLaborParticipationRate | 1             | 1             | 4            |
+| EduExpenditureOfGDP         | 1             | 1             | 1            |
+| GDP                         | 1             | 1             | 1            |
+| GDI                         | 1             | 1             | 1            |
+| UnemploymentExpenditure     | 1             | 1             | 1            |
+| LaborMarketStability        | 1             | 3             | 6            |
+| FamilyExpenditure           | 1             | 1             | 1            |
+| InterestRate                | 1             | 7             | 2            |
+| HousingPrice                | 1             | 1             | 1            |
+| UnemploymentRate            | 1             | 1             | 1            |
+| EmploymentRate              | 1             | 1             | 1            |
+| FirstBirthAge               | 1             | 1             | 1            |
+| AvgHoursWorked              | 1             | 1             | 1            |
+| HousingAffordabilityIndex   | 1             | 1             | 5            |
+| MarriageRate                | 2             | 2             | 9            |
+| InflationRate               | 3             | 8             | 1            |
+| GNI                         | 4             | 6             | 7            |
+| PartTimeRate                | 5             | 5             | 3            |
+
 
 
 📁<a href="https://github.com/oosedus/BirthratePrediction/tree/main/Data/data_rf.xlsx" >data_rf.xlsx </a>   
